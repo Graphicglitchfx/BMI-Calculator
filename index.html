@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professional BMI Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>BMI Calculator</h1>
+      <p>Calculate your Body Mass Index and get health insights</p>
+    </header>
+
+    <form id="bmi-form">
+      <div class="unit-toggle">
+        <label>
+          <input type="radio" name="unit" value="metric" checked> Metric (kg / cm)
+        </label>
+        <label>
+          <input type="radio" name="unit" value="imperial"> Imperial (lbs / in)
+        </label>
+      </div>
+
+      <div class="input-group">
+        <label for="weight">Weight</label>
+        <input type="number" id="weight" step="0.1" min="0" placeholder="e.g. 65" required>
+        <span id="weight-unit">kg</span>
+      </div>
+
+      <div class="input-group">
+        <label for="height">Height</label>
+        <input type="number" id="height" step="0.1" min="0" placeholder="e.g. 180" required>
+        <span id="height-unit">cm</span>
+      </div>
+
+      <button type="submit">Calculate BMI</button>
+    </form>
+
+    <div id="result" class="hidden">
+      <h2>Your BMI: <span id="bmi-value">—</span></h2>
+      <div id="category" class="category-badge">—</div>
+      <p id="message"></p>
+      <p id="advice"></p>
+    </div>
+
+    <footer>
+      <small>Based on WHO adult classifications. Not medical advice — consult a professional.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
